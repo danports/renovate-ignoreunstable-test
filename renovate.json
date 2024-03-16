@@ -1,0 +1,24 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base"
+    ],
+    "packageRules": [
+        {
+            "matchSourceUrlPrefixes": [
+                "https://github.com/kubernetes/kops"
+            ],
+            "ignoreUnstable": false
+        }
+    ],
+    "regexManagers": [
+        {
+            "fileMatch": [
+                "\\.yaml$"
+            ],
+            "matchStrings": [
+                "datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)(\\s+versioning=(?<versioning>.*?))?\\s+.*?_VERSION:\\s*(?<currentValue>\\S*)"
+            ]
+        }
+    ]
+}
